@@ -1,0 +1,20 @@
+class Solution {
+    public String removeConsecutive(String s) {
+
+        StringBuilder ans = new StringBuilder();
+
+        // Add first character
+        ans.append(s.charAt(0));
+
+        // Start from second character
+        for (int i = 1; i < s.length(); i++) {
+
+            // Add only if current != previous
+            if (s.charAt(i) != s.charAt(i - 1)) {
+                ans.append(s.charAt(i));
+            }
+        }
+
+        return ans.toString();
+    }
+}
